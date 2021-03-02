@@ -50,6 +50,12 @@ function addEventListeners() {
         amount = amountField.value;
         console.log(convertCurrencies(currencyFrom, currencyTo));
     })
+    
+    document.addEventListener("keypress", function (e) {
+        if (13 == e.keyCode){
+            submitBtn.click();
+        }
+    })
 };
 
 const apiKey = "a694099b50dc0fd635ef";

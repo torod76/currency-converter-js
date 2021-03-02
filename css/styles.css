@@ -14,6 +14,7 @@ body {
 a {
     text-decoration: none;
     color: black;
+    -webkit-tap-highlight-color: transparent;
 }
 
 input::-webkit-outer-spin-button,
@@ -27,19 +28,35 @@ input[type=number] {
 }
 
 #wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     padding-top: 3em;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 100%;
     height: auto;
 }
 
 #conversation-area {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 90%;
     height: auto;
     background-color: white;
@@ -53,9 +70,15 @@ input[type=number] {
 }
 
 .header-area {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 100%;
     min-height: 50px;
     background-color: #f0f5fa;
@@ -65,25 +88,42 @@ input[type=number] {
 }
 
 .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 90%;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-bottom: 1em;
     height: auto;
 }
 
 #currency-container label {
     margin-bottom: 1em;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .select-currency {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     min-height: 50px;
     width: 100%;
+    -webkit-transition: background 0.5s;
+    -o-transition: background 0.5s;
     transition: background 0.5s;
 }
 
@@ -94,6 +134,8 @@ input[type=number] {
 
 #amount-field {
     padding-left: 1em;
+    -webkit-transition: background 0.5s;
+    -o-transition: background 0.5s;
     transition: background 0.5s;
     min-height: 50px;
 }
@@ -103,8 +145,13 @@ input[type=number] {
 }
 
 #from-currency-div, #to-currency-div {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 100%;
     height: auto;
     margin-bottom: 1em;
@@ -140,24 +187,42 @@ input[type=number] {
 .submit {
     border: none;
     background-color: #0071eb;
+    -webkit-transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
     transition: background-color 0.5s;
     color: white;
     cursor: pointer;
     height: 50px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    opacity: 1;
 }
 .submit:active, .submit:hover {
     background-color: #0072ebd0;
 }
 
 .btn-flag {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    opacity: 1;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
     border: none;
     background: #716c74;
     border-radius: 7px;
     color: white;
     font-family: 'Source Code Pro', monospace;
+    -webkit-transition: background 0.5s;
+    -o-transition: background 0.5s;
     transition: background 0.5s;
     height: 100%;
     width: 30%;
@@ -179,7 +244,9 @@ input[type=number] {
 }
 
 #loader, #converted-currencies {
-    align-items: center;    
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;    
 }
 
 .sm-currency-from, .one-to, .one-from {
@@ -220,11 +287,21 @@ input[type=number] {
 }
   
 .modal-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content:space-evenly;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack:space-evenly;
+        -ms-flex-pack:space-evenly;
+            justify-content:space-evenly;
     width: 100%;
     margin-top: -0.5em;
 }
@@ -238,8 +315,13 @@ input[type=number] {
     }
 
     #currency-container {
-        flex-direction: row;
-        justify-content: space-between;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
     }
 
     .select-currency {
