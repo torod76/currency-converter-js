@@ -1,4 +1,4 @@
-const currencies={AUD:"Australian Dollar",BGN:"Bulgarian Lev",BRL:"Brazilian Real",CAD:"Canadian Dollar",CHF:"Swiss Frank",CNY:"Chinese Yuan",CZK:"Czech Republic Koruna",DKK:"Danish Krone",GBP:"British Pound",HKD:"Hong Kong Dollar",HRK:"Croatian Kuna",HUF:"Hungarian Forint",IDR:"Indonesian Rupiah",ILS:"Israeli New Shekel",INR:"Indian Rupee",JPY:"Japanese Yen",KRW:"South Korean Won",MXN:"Mexican Peso",MYR:"Malaysian Ringgit",NOK:"Norwegian Krone",NZD:"New Zealand Dollar",PHP:"Philippine Peso",PLN:"Polish Zloty",RON:"Romanian Leu",RUB:"Russian Ruble",SEK:"Swedish Krona",SGD:"Singapore Dollar",THB:"Thai Baht",TRY:"Turkish Lira",USD:"US Dollar",ZAR:"South African Rand"};
+const currencies={AUD:"Australian Dollar",BGN:"Bulgarian Lev",BRL:"Brazilian Real",CAD:"Canadian Dollar",CHF:"Swiss Frank",CNY:"Chinese Yuan",CZK:"Czech Republic Koruna",DKK:"Danish Krone",EUR: "Euro", GBP:"British Pound",HKD:"Hong Kong Dollar",HRK:"Croatian Kuna",HUF:"Hungarian Forint",IDR:"Indonesian Rupiah",ILS:"Israeli New Shekel",INR:"Indian Rupee",JPY:"Japanese Yen",KRW:"South Korean Won",MXN:"Mexican Peso",MYR:"Malaysian Ringgit",NOK:"Norwegian Krone",NZD:"New Zealand Dollar",PHP:"Philippine Peso",PLN:"Polish Zloty",RON:"Romanian Leu",RUB:"Russian Ruble",SEK:"Swedish Krona",SGD:"Singapore Dollar",THB:"Thai Baht",TRY:"Turkish Lira",USD:"US Dollar",ZAR:"South African Rand"};
 const modal = document.querySelector("#modal-currency");
 const currencyInputs = document.querySelectorAll(".select-currency");
 const countrySelectorButtons = document.querySelectorAll(".btn-flag");
@@ -69,11 +69,11 @@ function convertCurrencies(currencyFrom, currencyTo) {
         },
         success: function(result){
             $loader.hide();
-            console.log(result);
             showResults(result, currencyFrom, currencyTo);
         },
         error:function(error){
-            console.log(`Error: ${error}`);
+            console.log(error);
+            handleError();
             $loader.hide();
         }
     })
@@ -92,13 +92,23 @@ function showResults(result, from, to){
         amount = 1;
         amountField.value = 1;
     };
-    
+
+    fromTo *= amount;
+
     let resultHTML = `<span class="sm-currency-from">${amount} ${fromName} =</span>
     <span class="lg-currency-to">${fromTo}</span>
     <span class="currency-to-name">${toName}</span>
-    <span class="one-from">${to} = ${fromTo} ${from}</span>
-    <span class="one-to">1 ${to} = ${toFrom} ${to}</span>`;
+    <span class="one-from">1 ${from} = ${fromTo} ${to}</span>
+    <span class="one-to">1 ${to} = ${toFrom} ${from}</span>`;
 
     const resultDiv = document.querySelector("#converted-currencies");
+    resultDiv.innerHTML = resultHTML;
+}
+
+function handleError() {
+    $convertedCurrencies.show();
+    $convertedCurrencies.innerHTML = "";
+    const resultDiv = document.querySelector("#converted-currencies");
+    let resultHTML = `<span> Sorry, try again later. </span>`
     resultDiv.innerHTML = resultHTML;
 }
