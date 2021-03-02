@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap');
+
+* {
+    padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+}
+body {
+    background-color: #0a146e;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: row;
+    padding-top: 3em;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+#conversation-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: auto;
+    background-color: white;
+    border-radius: 7px;
+}
+
+#conversation-area label {
+    font-size: 0.9em;
+    font-weight: 400;
+    margin-bottom: 0.4em;
+}
+
+.header-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 2em;
+    background-color: #f0f5fa;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    margin-bottom: 1em;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+#currency-container {
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.select-currency {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transition: background 0.5s;
+}
+
+.header-area h1 {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+#amount-field {
+    padding-left: 1em;
+    transition: background 0.5s;
+}
+
+#amount-field:hover, #amount-field:active {
+    background: #c6c7cc62;
+}
+
+#from-currency-div, #to-currency-div {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    
+}
+
+#to-currency, #from-currency {
+    width: 100%;
+}
+
+.select-currency:hover, .select-currency:active {
+    background: #c6c7cc62;
+}
+
+.select-currency img {
+    padding-right: 0.4em;
+}
+.select-currency span {
+    padding-left: 0.4em;
+}
+
+#amount-field, #from-currency, #to-currency, .submit, .select-currency {
+    height: 2em;
+    border: 1px solid #edeef4;
+    outline: none;
+    border-radius: 7px;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+.submit {
+    border: none;
+    background-color: #0071eb;
+    transition: background-color 0.5s;
+    color: white;
+    cursor: pointer;
+}
+.submit:active, .submit:hover {
+    background-color: #0072ebd0;
+}
+
+@media screen and (min-width: 800px){
+    #conversation-area {
+        max-width: 800px;
+    }
+    .btn-flag {
+        width: 20%;
+    }
+}
+
+.btn-flag {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: none;
+    background: #716c74;
+    border-radius: 7px;
+    color: white;
+    font-family: 'Source Code Pro', monospace;
+    transition: background 0.5s;
+    height: 100%;
+    width: 30%;
+    max-width: 100px;
+    margin-top: 0.5em;
+    outline: none;
+    cursor: pointer;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+}
+
+.btn-flag:hover, .btn-flag:active {
+    background: #716c7491;
+}
+
+#loader, #converted-currencies {
+    align-items: center;    
+}
+
+.sm-currency-from, .one-to, .one-from {
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+.lg-currency-to, .currency-to-name {
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+.sm-currency-from, .lg-currency-to, .currency-to-name {
+    line-height: 1.6;
+}
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+}
+  
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 7px;
+}
+  
+.modal-body {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-evenly;
+    width: 100%;
+    margin-top: -0.5em;
+}
