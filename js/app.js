@@ -52,7 +52,7 @@ function addEventListeners() {
         console.log(convertCurrencies(currencyFrom, currencyTo));
     })
     
-    document.addEventListener("keypress", function (e) {
+    /* document.addEventListener("keypress", function (e) {
         if (13 === e.keyCode){
             conversationForm.submit();
         }
@@ -61,7 +61,14 @@ function addEventListeners() {
         if (13 === e.keyCode){
             conversationForm.submit();
         }
-    })
+    }) */
+    if(width < 750 && height < 1100) {
+        $console.keypressed(function(e) {
+            if(e == 13) {
+                $(this).blur();
+            }
+        }
+    }
 };
 
 const apiKey = "a694099b50dc0fd635ef";
