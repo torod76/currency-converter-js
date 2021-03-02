@@ -63,6 +63,10 @@ function addEventListeners() {
         }
     });
 
+    conversationForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+    })
+
 }
 
 const apiKey = "a694099b50dc0fd635ef";
