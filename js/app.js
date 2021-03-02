@@ -57,18 +57,7 @@ function addEventListeners() {
     amountField.addEventListener("keydown", function(e) {
         if(e == 13) {
             submitBtn.click();
-            if(width < 750 && height < 1100){
-                amountField.blur();
-            }       
-        }
-    });
-
-    amountField.addEventListener("onkeydown", function(e) {
-        if(e == 13) {
-            submitBtn.click();
-            if(width < 750 && height < 1100){
-                amountField.blur();
-            }       
+            amountField.blur();    
         }
     });
 
