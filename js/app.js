@@ -7,6 +7,7 @@ const amountField = document.querySelector("#amount-field");
 const loadingSpinner = document.querySelector("#loader");
 const $loader = $("#loader").hide();
 const $convertedCurrencies = $("#converted-currencies").hide();
+const conversationForm = document.querySelector("#conversation-area");
 let currencySelectorDiv;
 
 addEventListeners();
@@ -52,15 +53,13 @@ function addEventListeners() {
     })
     
     document.addEventListener("keypress", function (e) {
-        if (13 == e.keyCode){
-            submitBtn.click();
-            $(document.activeElement).filter(':input:focus').blur();
+        if (13 === e.keyCode){
+            conversationForm.submit();
         }
     })
     amountField.addEventListener("keypress", function (e) {
-        if (13 == e.keyCode){
-            submitBtn.click();
-            $(document.activeElement).filter(':input:focus').blur();
+        if (13 === e.keyCode){
+            conversationForm.submit();
         }
     })
 };
