@@ -67,7 +67,7 @@ function addEventListeners() {
     let $input = $("#amount-field");
     $input.keypress(function(e) {
         if(e == 13) {
-            conversationForm.submit();
+            submitBtn.click();
             if(width < 750 && height < 1100) $(this).blur();       
         }
     });
