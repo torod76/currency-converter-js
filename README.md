@@ -22,10 +22,10 @@ This project attempts to satisfy the following user stories:
  - Users can browse the site both from desktop
    and mobile devices.
 ## Built With
-HTML
-CSS
-JavaScript
-[jQuery](https://jquery.com/)
+ - HTML
+ - CSS
+ - JavaScript
+ - [jQuery](https://jquery.com/)
 ## Thanks To
 This project wouldn't be finished without the following resources:
  - [Free Currency Converter API](https://free.currencyconverterapi.com/)
