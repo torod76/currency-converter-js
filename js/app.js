@@ -99,10 +99,8 @@ function showResults(result, from, to){
         amountField.value = 1;
     };
 
-    fromTo *= amount;
-
     let resultHTML = `<span class="sm-currency-from">${amount} ${fromName} =</span>
-    <span class="lg-currency-to">${fromTo}</span>
+    <span class="lg-currency-to">${fromTo * amount}</span>
     <span class="currency-to-name">${toName}</span>
     <span class="one-from">1 ${from} = ${fromTo} ${to}</span>
     <span class="one-to">1 ${to} = ${toFrom} ${from}</span>`;
