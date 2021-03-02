@@ -8,6 +8,8 @@ const loadingSpinner = document.querySelector("#loader");
 const $loader = $("#loader").hide();
 const $convertedCurrencies = $("#converted-currencies").hide();
 const conversationForm = document.querySelector("#conversation-area");
+const width = window.innerWidth;
+const height = window.innerHeight;
 let currencySelectorDiv;
 
 addEventListeners();
@@ -52,23 +54,12 @@ function addEventListeners() {
         console.log(convertCurrencies(currencyFrom, currencyTo));
     })
     
-    /* document.addEventListener("keypress", function (e) {
-        if (13 === e.keyCode){
-            conversationForm.submit();
-        }
-    })
-    amountField.addEventListener("keypress", function (e) {
-        if (13 === e.keyCode){
-            conversationForm.submit();
-        }
-    }) */
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    let $input = $("#amount-field");
-    $input.keypress(function(e) {
+    amountField.addEventListener("keydown", function(e) {
         if(e == 13) {
             submitBtn.click();
-            if(width < 750 && height < 1100) $(this).blur();       
+            if(width < 750 && height < 1100){
+                this.blur();
+            }       
         }
     });
 
