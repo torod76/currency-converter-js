@@ -54,11 +54,13 @@ function addEventListeners() {
     document.addEventListener("keypress", function (e) {
         if (13 == e.keyCode){
             submitBtn.click();
+            $(document.activeElement).filter(':input:focus').blur();
         }
     })
     amountField.addEventListener("keypress", function (e) {
         if (13 == e.keyCode){
             submitBtn.click();
+            $(document.activeElement).filter(':input:focus').blur();
         }
     })
 };
