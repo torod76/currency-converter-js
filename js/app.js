@@ -62,14 +62,17 @@ function addEventListeners() {
             conversationForm.submit();
         }
     }) */
-    if(width < 750 && height < 1100) {
-        $console.keypressed(function(e) {
-            if(e == 13) {
-                $(this).blur();
-            }
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    let $input = $("#amount-field");
+    $input.keypress(function(e) {
+        if(e == 13) {
+            conversationForm.submit();
+            if(width < 750 && height < 1100) $(this).blur();       
         }
-    }
-};
+    });
+
+}
 
 const apiKey = "a694099b50dc0fd635ef";
 const url = `https://free.currconv.com/api/v7/convert`;
